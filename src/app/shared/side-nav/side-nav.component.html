@@ -1,0 +1,33 @@
+<mat-sidenav-container  class="sidenav-container pl-0 pr-0">
+  <mat-sidenav class="col-2  side-nav" fixedInViewport="true" [attr.role]="'navigation'" mode="side" opened="true"
+    >
+
+   
+    <mat-nav-list class="navigation-list">
+      <div class=" mT-20 p-0"  *ngFor="let link of menuItem">
+          <a class="row navigation-item" mat-list-item routerLink="/{{link.link}}" [routerLinkActive]="'active'">
+          <div class="col-2">
+              <img src="{{link.icon}}"> 
+              <img *ngIf="selected" src="{{link.icon}}"> 
+
+          </div> 
+          <div class="col-8 navigation-item-label drc-sidenav-label">
+              <span class="drc-label">{{link.label}}</span>
+          </div>
+          
+          
+          </a>
+
+      </div>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content col-10 ">
+    <div class="w-100">
+    
+      <router-outlet></router-outlet>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

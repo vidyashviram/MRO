@@ -1,0 +1,51 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 p-0 mb-3">
+        <div class="workorder">
+           
+        <div id="main">
+                <i matPrefix class="material-icons col-2" (click)="back()">
+                        arrow_back
+                       </i>
+                <!-- <mat-icon class= "col-2" (click)="back()">assignment_return</mat-icon> -->
+                        <div class=" col-6 offset-2 repaircard">Repair Card</div>
+              </div>
+        <!-- <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12"> -->
+              
+            <form [formGroup]="commonForm" class="border border-secondary p-2">
+                <div class="form-row">
+                    <div class="form-group col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" *ngFor="let field of fieldsArr">
+                        <label for="soNum">{{field.label}}</label>
+                        <input *ngIf="field.type!=='textarea' else elseBlock" type="{{field.type}}" id="{{field.control}}"
+                            class="form-control" placeholder="{{field.label}}" formControlName="{{field.control}}"
+                             [attr.disabled]="true">
+                    </div>
+    
+                </div>
+    
+            </form>
+        <!-- </div> -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12   table-responsive" *ngIf=items >
+            <div class="form-rows">
+                <p-table #dt [columns]="cols"  [value]="items" class="table-height">
+                 
+                    <ng-template pTemplate="header" let-columns  class="table-height">
+                        <tr>
+                            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                                {{col.header}}
+                             
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-columns="columns">
+                        <tr  [pSelectableRow]="rowData">
+                            <td *ngFor="let col of columns" class="ui-resizable-column">
+                                 
+                                {{rowData[col.field]}}
+                            </td>
+                        </tr>
+                    </ng-template>
+                  
+                </p-table>
+                </div>
+            </div>
+                </div>
+    </div>

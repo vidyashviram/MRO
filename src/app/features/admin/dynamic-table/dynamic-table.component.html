@@ -1,0 +1,57 @@
+<!-- Table starts -->
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 p-0 table-responsive" *ngIf="tableData">
+ <p-table #dt [columns]="cols" [value]="tableData" class="col-12 col-sm-12 col-md-12 col-lg-12" [paginator]="true"
+    [rows]="5" [responsive]="true" [resizableColumns]="true" [alwaysShowPaginator]="false">
+
+    <div class="search">
+      <ng-template pTemplate="caption">
+        <div class="search">
+          <div class="float-right"> <input InputText type="text" id="grid-search" InputText size="50" placeholder="Search"
+              class="inputsearchbar" (input)="dt.filterGlobal($event.target.value, 'contains')">
+            <img src="../../../assets/admin/search.png" style="margin-bottom: 4px;height: 30px;">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </ng-template>
+    </div>
+
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          {{col.header}}
+          <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+            ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order">
+          </p-sortIcon>
+        </th>
+        <th *ngIf="editable && tableData.length != 0"><span>Action</span></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData">
+        <td *ngFor="let col of columns;let last = last">
+          {{rowData[col.field] ? rowData[col.field] : "NA"}}
+        </td>
+
+        <td *ngIf="editable && tableData.length != 0">
+          <!-- <button pButton type="button" icon="pi pi-pencil" iconPos="left" (click)="editRow(rowData)" class="mr-1"></button> -->
+          <img type="button" src="../../../assets/admin/edit_icon.png" iconPos="left" (click)="editRow(rowData)"
+            class="mr-1">
+          <p-toggleButton *ngIf="deletable" [(ngModel)]='rowData.active' onLabel="Active"  offLabel="Inactive"
+            (click)="deleteRow(rowData)"></p-toggleButton>
+        </td>
+      </tr>
+    </ng-template>
+
+
+    <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+        <td [attr.colspan]="columns.length+1">
+          <div class="no-data-msg">
+            No data found
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<!-- Table ends -->

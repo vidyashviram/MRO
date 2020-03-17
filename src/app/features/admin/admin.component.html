@@ -1,0 +1,138 @@
+<div class="spinner" *ngIf="displayLoading">
+    <div class="loader"></div>
+  </div>
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 p-0 mb-3" >
+  <app-page-header [headTitle]="pageTitle"></app-page-header>
+  
+    
+  <!-- Admin content body -->
+  <div class="col-lg-12 col-md-12 col-sm-12 p-0"  >
+      <mat-tab-group [selectedIndex]="tabIndex" (selectedTabChange)="onTabChanged($event);">
+          <mat-tab class="col-12 col-sm-12 col-md-12 col-lg-12 tabs" label="{{item.label}}" *ngFor="let item of items; let index = index">
+            <ng-template matTabContent >
+
+              <!-- Users Tab -->
+              <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="item.label=='User Management'">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                  <p-button *ngIf="addUserBtn" label="Add User" (click)="showDialog('addUser')" class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                    <app-dynamic-table  [tableData]='tableData' [tableFrom] ='tableFrom' (showEdit)="showEditDialog($event)" [editable]="true" [deletable]="true" id={{index}}_view> </app-dynamic-table>
+                  </div>
+              </div>
+              <!-- Users Tab Ends here -->
+
+              <!-- Role management Tab -->
+              <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="item.label=='Role Management'">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                  <p-button *ngIf="addRoleBtn"  label="Add Role" (click)="showDialog('addRole')" class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                    <app-dynamic-table [tableData]='tableData' [tableFrom] ='tableFrom' (showEdit)="showEditDialog($event)" [editable]="true"  [deletable]="true" id={{index}}_view> </app-dynamic-table>
+                  </div>
+              </div>
+              <!-- Role Management Tab Ends here -->
+  
+              <!-- Customer Management Tab -->
+              <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="item.label=='Customer Management'">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                <p-button *ngIf="addCustomerBtn" label="Add Customer" (click)="showDialog('addCustomer')" class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                  <app-dynamic-table [tableData]='tableData' [tableFrom] ='tableFrom' (showEdit)="showEditDialog($event)"  [editable]="true"  [deletable]="true" id={{index}}_view> </app-dynamic-table>
+                </div>
+              </div>
+              <!-- Customer Management Tab Ends here -->
+  
+               <!-- Supplier Management Tab -->
+               <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="item.label=='Supplier Management'">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                <p-button  *ngIf="addSupplierrBtn" label="Add Supplier" (click)="showDialog('addSupplier')" class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                  <app-dynamic-table [tableData]='tableData'[tableFrom] ='tableFrom'  (showEdit)="showEditDialog($event)" [editable]="true"  [deletable]="true" id={{index}}_view> </app-dynamic-table>
+                </div>
+              </div>
+              <!-- Supplier Management Tab Ends here -->
+  
+               <!-- Plant Configuration Tab -->
+               <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="item.label=='Plant Configuration'">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                <p-button  *ngIf="addPlantBtn" label="Add Plant" (click)="showDialog('addPlant')" class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                  <app-dynamic-table [tableData]='tableData' [tableFrom] ='tableFrom' (showEdit)="showEditDialog($event)" [editable]="true"  [deletable]="true" id={{index}}_view> </app-dynamic-table>
+                </div>
+              </div>
+              <!-- Plant Configuration Tab Ends here -->
+  
+               <!-- Application Configuration Template Tab -->
+               <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="item.label=='Application Configuration'">
+                  <app-app-config ></app-app-config>
+              </div>
+              <!-- Application Configuration Tab Ends here -->
+  
+              <!-- Mail Template Tab -->
+              <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="item.label=='Mail Template Configuration'">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                  <p-button   label="Add Email Template" (click)="showDialog('addEmail')" class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                  </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                  <app-email-config [tableData]='tableData' [tableFrom] ='tableFrom' (showEdit)="showEditDialog($event)" [editable]="true"  [deletable]="true" id={{index}}_view> </app-email-config>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+                  <app-email-config></app-email-config>
+                </div>
+              </div>
+              <!-- Mail Template Tab Ends here -->
+
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+
+        <p-dialog header="Enter Customer Details" *ngIf="addCustomer" [(visible)]="addCustomer" styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7" >
+          <app-customer-config [rowData]="editRowData" [updateRow]="editRow" (customerEvent)="onTabChanged($event)"></app-customer-config>
+        </p-dialog>
+        
+        <p-dialog header="Enter User Details" *ngIf="addUser" [(visible)]="addUser" styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7" >
+          <app-user-config [rowData]="editRowData" [updateRow]="editRow"  (customerEvent)="onTabChanged($event)"></app-user-config>
+        </p-dialog>
+  </div>
+  </div>
+  
+  <!--Popup for adding role -->
+  <p-dialog header="Enter Roles" *ngIf="addRole" (customerEvent)="onTabChanged($event)" [(visible)]="addRole" styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7" >
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <form [formGroup]="roleForm" >
+              <div class="form-row">
+                  <div class="form-group col-12 col-sm-6 com-md-6 col-lg-6" *ngFor="let field of fieldsArr" [ngSwitch]="field.type">
+                      <label class="label-font">{{field.label}}</label>
+                      <input  *ngSwitchCase="'text'" type="{{field.type}}"  id="{{field.control}}"  class="form-control"  placeholder="{{field.label}}" formControlName="{{field.control}}" required>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                  <button type="button" id="at-btn-publish" class="cancel_btn btn btn-primary col-lg-3 mr-1" (click)="cretaeRole()">Save</button>
+                  <button type="button" id="at-btn-cancel" class="submit_btn  btn btn-primary col-lg-3 ml-1" (click)="cancelRole()" [disabled]="isDisabled">Cancel</button>
+              </div>
+          </form>
+      </div>
+    </div>
+  </p-dialog>
+  <!--Popup for adding role ends here-->
+
+    <!-- Pop up for supplier template -->
+  <p-dialog header="Enter Supplier Details" *ngIf="addSupplier" [(visible)]="addSupplier" styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7" >
+    <app-supplier-config [rowData]="editRowData"  [updateRow]="editRow" (customerEvent)="onTabChanged($event)"></app-supplier-config>
+  </p-dialog>
+  
+    <!-- Pop up for plant template -->
+  <p-dialog header="Plant Details" *ngIf="addPlant" [(visible)]="addPlant" styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7" >
+    <app-plant-config [rowData]="editRowData"  [updateRow]="editRow" (customerEvent)="onTabChanged($event)"></app-plant-config>
+  </p-dialog>
+  
+  <!-- Pop up for adding mail template -->
+  <p-dialog header="Email Template" *ngIf="addEmail" [(visible)]="addEmail" styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7" >
+    <app-email-template [rowData]="editRowData"  [updateRow]="editRow" (customerEvent)="onTabChanged($event)"></app-email-template>
+  </p-dialog>
+  

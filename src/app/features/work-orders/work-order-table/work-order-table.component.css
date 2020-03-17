@@ -1,0 +1,27 @@
+.table-height{
+    margin-top:2em;
+}
+   
+::ng-deep .ui-table .ui-table-tbody > tr > td{
+    text-align: center !important;
+}
+/* // ::ng-deep .ui-table .ui-table-thead > tr > th{
+// color: #ff9800 !important; 
+// text-align: center !important;
+// } */
+
+::ng-deep .ui-table .ui-table-tbody > tr > td{
+ text-align: center !important; 
+}
+.button{
+    width:40px;
+    height:25px;
+    font-family:Arial;
+    font-size:14px;
+}
+.table-header{
+    font-family:Arial;
+    font-size:14px;   
+    color:#0071BC
+     !important;
+  }

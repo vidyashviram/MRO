@@ -1,0 +1,28 @@
+::ng-deep .mat-tab-header .mat-tab-label-container  .mat-tab-label{
+    border: 2px solid #fff !important;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+     background: #4c6161 !important;
+    height: 40px;
+    color: #fff;
+    margin-left:70px;
+    font-size:14px;
+    font-family:Bahnschrift;
+ 
+  }
+  ::ng-deep .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-label-active{
+    border: 2px solid #fff !important;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+     background: #0071BC !important;
+    height: 40px;
+    color: #fff;
+    margin-left:70px;
+    font-size:14px;
+    font-family:Bahnschrift;
+  }
+
+  /* ::ng-deep .mat-tab-header{
+    margin-left:100px;
+  }
+   */

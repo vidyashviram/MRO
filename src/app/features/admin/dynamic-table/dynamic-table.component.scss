@@ -1,0 +1,98 @@
+
+ .inputsearchbar{ border-radius: 12px 0px 0px 12px; 
+    border-color:#0071BC;
+    height:30px;
+    }
+
+    .search-image{
+        height: 30px;
+    margin-bottom: 3px;
+    }
+::ng-deep .ui-table .ui-sortable-column.ui-state-highlight{
+    background-color: #f4f4f4 !important;
+   }
+   
+   ::ng-deep .ui-table .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon{
+       color: #848484 !important;
+   }
+   
+   
+   
+    ::ng-deep .ui-table .ui-table-tbody > tr > td{
+        text-align: center !important;
+    
+    }
+   
+::ng-deep .ui-table .ui-table-thead > tr > th{
+    color: #0071BC !important; 
+    text-align: center !important;
+ }
+ 
+ 
+ 
+ ::ng-deep .ui-table .ui-table-tbody > tr > td{
+     text-align: center !important; 
+ }
+ 
+ ::ng-deep .ui-card .ui-card-body {
+     color: #999999 !important;    
+     padding: 2% !important; 
+ }
+ 
+ ::ng-deep .ui-card{
+     border-radius:  2% !important; 
+ }
+ 
+ 
+ ::ng-deep .ui-card .ui-card-body .material-icons{
+ padding: 2%;
+ color: #ffffff;
+ }
+ 
+ .user-form {
+     .lable-style {
+          font-family: Gotham;
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 5px;
+          padding-left: 1px;
+          color:black;
+ 
+      }
+      
+      .lable-style.required:after {
+          content:"*";
+          color:red;
+      }
+      
+      .form-control {
+          display: inline;
+          font-size: 1.5rem;
+          border-color: white;
+          background-color: #383B50;
+          color: #fdfdfe;
+      }
+   
+      .dailog-selection-dropdown-background-color{   
+       background-color: #383B50;
+       color:white;
+      }
+ }
+ 
+    .pdropdown{
+          color:#999999 ;
+          display: block
+      }
+ 
+ 
+      ::ng-deep  .ui-calendar .ui-datepicker{
+          width: auto !important;
+          background-color: white !important;
+      }
+      ::ng-deep .ui-table table{
+        table-layout: inherit;
+      }
+
+   
+
+      

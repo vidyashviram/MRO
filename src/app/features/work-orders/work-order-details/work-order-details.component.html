@@ -1,0 +1,49 @@
+<mat-card>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 p-0 mb-3">
+        <app-page-header [headTitle]="pageTitle"></app-page-header>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+
+            <mat-tab-group [selectedIndex]="tabIndex">
+                <mat-tab class="col-12 col-sm-12 col-md-12 col-lg-12 tabs " label="{{item.label}}"
+                    *ngFor="let item of workorderitems   let index = index">
+                    <ng-template matTabContent>
+                        <div class="example-button-row col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                            *ngIf="item.label=='Receiving'">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
+                                <app-receiving></app-receiving>
+
+                            </div>
+                        </div>
+                        <div class="example-button-row col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                            *ngIf="item.label=='Customer'">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
+
+                                <app-customer></app-customer>
+                            </div>
+                        </div>
+                        <div class="example-button-row col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                            *ngIf="item.label=='Material'">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
+
+                                <app-material></app-material>
+                            </div>
+                        </div>
+                        <!-- <div class="example-button-row col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                            *ngIf="item.label=='Waranty'">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
+
+                                <app-warranty></app-warranty>
+                            </div>
+                        </div> -->
+                    </ng-template>
+
+
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+
+
+</mat-card>

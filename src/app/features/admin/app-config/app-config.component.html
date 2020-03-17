@@ -1,0 +1,82 @@
+
+<div class="spinner" *ngIf="displayLoading">
+    <div class="loader"></div>
+  </div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 p-0 mb-3">
+    <!-- App config content body -->
+    <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+        <mat-tab-group [selectedIndex]="tabIndex" (selectedTabChange)="onTabChanged($event);">
+            <mat-tab class="col-12 col-sm-12 col-md-12 col-lg-12" label="{{item.label}}"
+                *ngFor="let item of items; let index = index">
+                <ng-template matTabContent>
+                    <!-- DB Server Tab -->
+                    <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12"
+                        *ngIf="item.label=='DB Server Config'">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                            <p-button  *ngIf="addDBBtn" label="Add DB Server" (click)="showDialog('addDBServer')"
+                                class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                            <app-dynamic-table [tableData]='tableData' [tableFrom]='tableFrom'
+                                (showEdit)="showEditDialog($event)" [editable]="true" [deletable]="false"
+                                id={{index}}_view>
+                            </app-dynamic-table>
+                        </div>
+                    </div>
+                    <!-- DB Server Tab Ends here -->
+                    <!-- SMTP Server Tab management Tab -->
+                    <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12"
+                        *ngIf="item.label=='SMTP Server Config'">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                            <p-button *ngIf="addSMTPBtn" label="Add SMTP Server" (click)="showDialog('addSMTPServer')"
+                                class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                            <app-dynamic-table [tableData]='tableData' [tableFrom]='tableFrom'
+                                (showEdit)="showEditDialog($event)" [editable]="true" [deletable]="false"
+                                id={{index}}_view>
+                            </app-dynamic-table>
+                        </div>
+                    </div>
+                    <!-- SMTP Server Tab Ends here -->
+                    <!-- Active Directory Tab management Tab -->
+                    <div class="example-button-row col-12 col-sm-12 col-md-12 col-lg-12"
+                        *ngIf="item.label=='Active Directory'">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 btn-wrapper">
+                            <p-button *ngIf="addLDAPBtn" label="Add Active Directory" (click)="showDialog('addLDAPServer')"
+                                class="col-12 col-sm-12 col-md-12 col-lg-3 p-0 mt-2 mb-2 mr-0"></p-button>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 " *ngIf="tableData && loadTable">
+                            <app-dynamic-table [tableData]='tableData' [tableFrom]='tableFrom'
+                                (showEdit)="showEditDialog($event)" [editable]="true" [deletable]="false"
+                                id={{index}}_view>
+                            </app-dynamic-table>
+                        </div>
+                    </div>
+                    <!-- Active Directory Tab Ends here -->
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
+
+        <!-- Forms for App config-->
+        <p-dialog header="DB Server Details" *ngIf="addDBServer" [(visible)]="addDBServer"
+            styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7">
+            <app-dbserver-config [rowData]="editRowData" [updateRow]="editRow" (customerEvent)="onTabChanged($event)">
+            </app-dbserver-config>
+        </p-dialog>
+
+        <p-dialog header="SMTP Server Details" *ngIf="addSMTPServer" [(visible)]="addSMTPServer"
+            styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7">
+            <app-smtpserver-config [rowData]="editRowData" [updateRow]="editRow" (customerEvent)="onTabChanged($event)">
+            </app-smtpserver-config>
+        </p-dialog>
+
+        <p-dialog header="Active Directory Details" *ngIf="addLDAPServer" [(visible)]="addLDAPServer"
+            styleClass="mydialog col-10 col-sm-10 col-md-10 col-lg-7">
+            <app-ldap-config [rowData]="editRowData" [updateRow]="editRow" (customerEvent)="onTabChanged($event)">
+            </app-ldap-config>
+        </p-dialog>
+
+    </div>
+</div>

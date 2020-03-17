@@ -1,0 +1,8 @@
+.label-font{
+    font-family: Bahnschrift;
+    font-size:14px;
+    }
+    .form-control:disabled, .form-control[readonly] {
+        background-color: #E2E2E2;
+        opacity: 1;
+    }

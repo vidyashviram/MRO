@@ -1,0 +1,39 @@
+<div class="spinner" *ngIf="displayLoading">
+    <div class="loader"></div>
+</div>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+        <form [formGroup]="dbserverConfigForm">
+            <div class="form-row">
+                <div class="form-group col-12 col-sm-6 com-md-6 col-lg-6" *ngFor="let field of fieldsArr"
+                    [ngSwitch]="field.type">
+                    <label class="label-font">{{field.label}}</label>
+                    <input *ngSwitchCase="'number'" type="{{field.type}}" id="{{field.control}}" class="form-control"
+                        placeholder="{{field.label}}" formControlName="{{field.control}}">
+                    <input *ngSwitchCase="'text'" type="{{field.type}}" id="{{field.control}}" class="form-control"
+                        placeholder="{{field.label}}" formControlName="{{field.control}}">
+                    <input *ngSwitchCase="'email'" type="{{field.type}}" id="{{field.control}}" class="form-control"
+                        placeholder="{{field.label}}" formControlName="{{field.control}}">
+                    <textarea *ngSwitchCase="'textarea'" id="{{field.control}}"
+                        class="mdb-select md-form colorful-select dropdown-primary" class="form-control"
+                        formControlName="{{field.control}}"></textarea>
+                    <p-dropdown *ngSwitchCase="'select'" appendTo="body" [filter]="true" [options]="field.options"
+                        formControlName="{{field.control}}" [showTransitionOptions]="'500ms'"
+                        [hideTransitionOptions]="'500ms'"
+                        [style]="{'margin-left': '1px','margin-right': '1px','width':'100%','color':'#C7C7C7','background-color':'#383B50'}">
+                    </p-dropdown>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center d-flex justify-content-center">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <button type="button" id="at-btn-publish" class="cancel_btn btn btn-primary col-lg-3 mr-1"
+                    (click)="onSubmit('create')">Save</button>
+                <button type="button" id="at-btn-cancel" class="submit_btn  btn-primary btn  col-lg-3 ml-1"
+                    (click)="cancel()" [disabled]="isDisabled">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

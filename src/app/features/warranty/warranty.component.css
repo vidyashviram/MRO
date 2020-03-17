@@ -1,0 +1,73 @@
+.form-width{
+    width:100%
+}
+.check-box{
+   
+     width: 35px;
+    height: 16px;
+    color:red;
+  
+ 
+}
+
+
+.main { 
+margin-top:1em;
+    display: block; 
+    position: relative; 
+    padding-left: 25px; 
+    margin-bottom: 15px; 
+    cursor: pointer; 
+    font-size: 17px; 
+ } 
+  
+ /* Hide the default checkbox */ 
+ input[type=checkbox] { 
+    visibility: hidden; 
+ } 
+  
+ 
+ .geekmark { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 22px; 
+    width: 22px; 
+    border-color:black;
+     background-color: #b7b7b7; 
+ } 
+  
+
+ .main input:checked ~ .geekmark { 
+    background-color: #0071BC; 
+ } 
+  
+ 
+ .geekmark:after { 
+    content: ""; 
+    position: absolute; 
+    display: none; 
+ } 
+  
+ 
+ .main input:checked ~ .geekmark:after { 
+    display: block; 
+ } 
+  
+ 
+ .main .geekmark:after { 
+    left: 8px; 
+    bottom: 5px; 
+    width: 6px; 
+    height: 12px; 
+    border: solid white; 
+    border-width: 0 4px 4px 0; 
+    -webkit-transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+    transform: rotate(45deg); 
+ } 
+
+ .form-group{
+    font-family:Bahnschrift;
+    font-size:14px;
+  }

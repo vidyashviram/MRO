@@ -1,0 +1,33 @@
+.subject-to-lablel{
+    height:25px;
+    padding: 2px 0px 2px 5px;
+    border-radius: unset;
+    line-height: initial;
+}
+.list-group-item-secondary{
+    background-color:#f1f4f7 !important;
+}
+.template-body{
+    font-family: monospace;
+}
+.padding-position{
+    padding-left: 15px;
+    border: 1px solid #afa7a7;
+  }
+
+  .card-container {
+    /*  not needed styles to reflect it */ 
+    padding: 10px;
+    color: white;
+    /* needed styles below */
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    margin-bottom: 1rem;
+    
+  }
+
+  .mat-card-title{
+    font-size: 17px;
+    font-weight: 300;
+  }

@@ -1,0 +1,389 @@
+
+
+html, body { height: 100%; }
+body { margin: 10px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.w-100{
+    width: 100%;
+}
+
+/* padding */
+.p-0{
+    padding: 0;
+}
+
+
+/* padding -right */
+.pR-20{
+    padding-right:20px
+}
+
+
+
+/* padding-top */
+.pT-4{
+    padding-top:  4px;
+}
+.pT-10{
+    padding-top :10px;
+}
+
+
+/* padding-left */
+.pL-10{
+    padding-left: 10px;
+}
+
+
+/* padding-bottom */
+
+.pB-0{
+    padding-bottom: 0;
+}
+
+
+
+
+/* margin */
+.m-10{
+    margin:10px;
+}
+
+
+
+/* margin-bottom */
+
+
+.mB-20{
+    margin-bottom: 20px;
+}
+.mB-40{
+    margin-bottom: 40px;
+}
+
+
+
+/* margin-top */
+.mT-25{
+    margin-top: 25px;
+   
+}
+.mT-20{
+    margin-top:20px;
+}
+.mT-30{
+    margin-top: 30px;
+}
+
+
+
+/* margin-left */
+.mL-20{
+    margin-left: 20px;
+}
+
+
+
+/* margin-right */
+
+.mR-50{
+    margin-right: 50px;
+}
+
+
+
+
+.main-content{
+    background-color: #dee2e6;
+    
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* background: #c3e0e0; */
+    background: #eee !important;
+}
+.page-container{
+  position: relative;
+  min-height: 100vh;
+}
+.middle-content{
+    padding-bottom: 2.5rem;
+}
+footer {
+    /* position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;   */
+    clear: both;
+    position: relative;
+    height: 42px;
+    line-height: 2;
+    text-align: center;  
+}
+.form-header{
+    height: 42px;
+    line-height: 3;
+    border-radius: 6px 6px 0px 0px;
+    background: #66CCCC;
+    margin-bottom: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    border: 1px solid #fff;
+    color: #FBFEFE;
+}
+.title-header{
+    color: #3C4858; 
+    font-weight: bold;
+    margin-left: 1%;
+}
+div.mydialog > .ui-dialog-titlebar{
+    border-radius: 6px 6px 0px 0px;
+    background-color: #16082f !important;
+    font-size: 1em;
+    font-weight: 500;
+    color: #FBFEFE !important;
+    height:42px;
+    line-height: 1;
+}
+.submit_btn {
+    width: 100%;
+    background: lightgray !important;
+    color: black !important;
+}
+.submit_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.cancel_btn.btn-primary{
+    width: 100%;
+}
+.d-n{
+    display: none !important;
+}
+.attachmentStyle{
+    color:#3c8dbc!important;
+    cursor: pointer !important;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  } 
+  .search-bar {
+    overflow: hidden;
+  
+     /* background-color: #e9e9e9; */
+    margin-top:1em; 
+  } 
+  .search-container {
+    float: right;
+     /* border-radius: 12px 12px 12px 12px;  */
+  }
+  .inputsearchbar{
+      height:37px;
+      margin-top:1em;
+      /* border-radius: 12px 12px 12px 12px; */
+      /* text-align:center; */
+  }
+  /*tablabel style*/
+  .mat-tab-header .mat-tab-label-container  .mat-tab-label{ 
+      font-family:	Bahnschrift;
+        font-size:14px;
+    }
+    /*page title style*/
+   
+ 
+  .input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    /* border-radius: 12px 12px 12px 12px; */
+    
+  }
+  /*Table-header style*/
+  .table-header{
+    font-family:Arial;
+    font-size:14px;   
+  }
+  
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #17a2b8;
+    border-bottom: 16px solid #17a2b8;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+  }
+  @-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    background: none !important;
+    opacity: 0.6;
+  }
+
+  /* ::ng-deep .ui-table .ui-table-thead > tr > th{
+    color: #ff9800 !important; 
+    text-align: center !important;
+ } */
+ 
+  .table{
+      margin-bottom: 0px !important;
+  }
+
+  .search-icon{
+    position: fixed;
+    display: contents;
+}
+
+.no-data-msg{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+} 
+
+    .buttons{
+        background-color:#0071BC;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        
+        }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+
+:host ::ng-deep button {
+    margin-right: .25em;
+}
+:host ::ng-deep .custom-toast .ui-toast-message {
+    color: #ffffff;
+    background: #FC466B;
+    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+    background: linear-gradient(to right, #3F5EFB, #FC466B);
+}
+:host ::ng-deep .custom-toast .ui-toast-close-icon {
+    color: #ffffff;
+}
+:host ::ng-deep .top-toast {
+    top: 80px;
+}
+:host ::ng-deep .news-active .top-toast {
+    top: 150px;
+}
+@media screen and (max-width: 64em) {
+    :host ::ng-deep .top-toast {
+        top: 110px;
+    }
+    :host ::ng-deep .news-active .top-toast {
+        top: 180px;
+    }
+}
+
+/* Table */
+
+.inputsearchbar{ border-radius: 12px 0px 0px 12px; 
+    border-color:#0071BC;
+    height:30px;
+    }
+
+    .search-image{
+        height: 30px;
+    margin-bottom: 3px;
+    }
+::ng-deep .ui-table .ui-sortable-column.ui-state-highlight{
+    background-color: #f4f4f4 !important;
+   }
+   
+   ::ng-deep .ui-table .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon{
+       color: #848484 !important;
+   }
+   
+   
+   
+    ::ng-deep .ui-table .ui-table-tbody > tr > td{
+        text-align: center !important;
+    
+    }
+   
+::ng-deep .ui-table .ui-table-thead > tr > th{
+    color: #0071BC !important; 
+    text-align: center !important;
+ }
+ 
+ ::ng-deep .ui-table .ui-table-tbody > tr > td{
+     text-align: center !important; 
+ }
+ 
+ ::ng-deep .ui-card .ui-card-body {
+     color: #999999 !important;    
+     padding: 2% !important; 
+ }
+ 
+ ::ng-deep .ui-card{
+     border-radius:  2% !important; 
+ }
+ 
+ ::ng-deep .ui-card .ui-card-body .material-icons{
+ padding: 2%;
+ color: #ffffff;
+ }
+ 
+
+ ::ng-deep .ui-tabview-panels{
+    border: 0px !important;
+   }
+   
+   ::ng-deep  p-tabview .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active{
+       background-color:#55a7a7  !important; 
+   }

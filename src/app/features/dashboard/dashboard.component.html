@@ -1,0 +1,36 @@
+<div class="row mT-25">
+  <div class="col-3 mB-20" *ngFor="let content of cardContents">
+
+    <mat-card  class="pB-0 dashboard-card mat-elevation-z4" (click)="gridClick(content.id,content.title)">
+      <div class="row pL-10">
+        <div class="col-lg-4 col-xl-4 col-md-12 dashboard-card-icon-container"
+          [ngStyle]="{'background-image': 'url(' + content.icon + ')'}">
+          <!-- <img src="/assets/dashboard/{{content.icon}}"> -->
+          <!-- <img class="dashboard-card-icon">  -->
+        </div>
+        <div class="col-lg-8 col-md-12">
+          <div *ngIf="content.title" class="row">
+            <p>{{content.title}}</p>
+            <!-- <mat-card-subtitle>{{content.title}}</mat-card-subtitle> -->
+          </div>
+          <div  class="row dashboard-card-content">
+            <p>{{content.count}}</p>
+            <!-- <mat-content> {{content.count}}</mat-content> -->
+          </div>
+          <div *ngIf="content.description" class="row">
+
+            <p>{{content.description}}</p>
+
+            <!-- <mat-content> {{content.description}}</mat-content> -->
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </mat-card>
+
+  </div>
+</div>

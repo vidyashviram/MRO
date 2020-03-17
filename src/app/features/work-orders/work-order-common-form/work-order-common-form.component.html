@@ -1,0 +1,18 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 p-0 mb-3">
+    <!-- <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12"> -->
+    <form [formGroup]="commonForm">
+        <div class="form-row">
+            <div class="form-group col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6" *ngFor="let field of fieldsArr">
+                <div class="col1">
+                    <label for="soNum" class="label-font">{{field.label}}</label>
+                    <input *ngIf="field.type!=='textarea' else elseBlock" type="{{field.type}}" id="{{field.control}}"
+                        class="form-control" placeholder="{{field.label}}" formControlName="{{field.control}}"
+                        [value]="paramName" [attr.disabled]="true">
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <!-- </div> -->
+
+</div>

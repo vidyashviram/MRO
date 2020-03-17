@@ -1,0 +1,31 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 p-0 table-responsive" *ngIf=items>
+        <p-table #dt [columns]="cols" [value]="items" class="table-height" selectionMode="single"
+         [(selection)]="selectedRow"   [paginator]="true" [rows]="4" [responsive]="true" [resizableColumns]="true"
+         [alwaysShowPaginator]="false">
+     
+    
+            <ng-template pTemplate="header" let-columns class="table-height">
+                <tr>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field" class="table-header">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+                            ariaLabelDesc="Activate to sort in descending order"
+                            ariaLabelAsc="Activate to sort in ascending order">
+                        </p-sortIcon>
+                    </th>
+                    <th *ngIf=" items.length != 0"><span>Action</span></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns" class="ui-resizable-column">
+                        {{rowData[col.field]}}
+    
+                    </td>
+                    <td *ngIf="items.length != 0"  >     
+                            <button pButton type="button" class="button" (click)="onSelected($event)"> View</button>       
+                           </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>

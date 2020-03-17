@@ -1,0 +1,40 @@
+::ng-deep .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-label{
+    border: 2px solid #fff !important;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    background: #4c6161 !important;
+    height: 40px;
+    color: #fff;
+    margin-top: 1%;
+    font-size:14px;
+    font-family:Bahnschrift;
+}
+
+::ng-deep .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-label-active{
+    border: 2px solid #fff !important;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    background: #0071BC !important;
+    height: 40px;
+    color: #fff;
+    font-size:14px;
+    font-family:Bahnschrift;
+}
+/* ::ng-deep .submit_btn  btn  {    
+    background: #0071BC;
+    border: none;
+    color: white !important;
+    font-weight: 500;
+    font-size: 1em;
+} */
+
+::ng-deep .example-button-row{
+    margin-top: 1%;
+}
+
+
+p-button{
+    display: inline;
+}
+
+

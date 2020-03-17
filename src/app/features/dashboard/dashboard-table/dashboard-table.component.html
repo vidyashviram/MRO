@@ -1,0 +1,63 @@
+
+<app-page-header [headTitle]="title"></app-page-header>
+
+
+<div *ngIf="loadNoData" style="text-align: center;font-size: 16px;">
+    No data found
+</div>
+<mat-card class="mat-elevation-z8 margin-top ">
+
+
+<div *ngIf="loadTable"> 
+        <p-table #dt [columns]="cols" [value]="tableData" [paginator]="true" [rows]="5" [resizableColumns]="true"
+        [alwaysShowPaginator]="false" [responsive]="true">
+
+    
+        <div class="search">
+          <ng-template pTemplate="caption">
+            <div class="search">
+              <div class="float-right position-relative">
+                <!-- <div class="search-icon" id="grid-search-icon">
+                  <i class="pi pi-search"  style="margin-right: 5px;"></i>
+                </div> -->
+                <input pInputText type="text" id="grid-search" autofocus="autofocus" pInputText size="50"
+                  placeholder="Search" (input)="dt.filterGlobal($event.target.value, 'contains')">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </ng-template>
+        </div>
+    
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+              {{col.header}}
+              <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+                ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order">
+              </p-sortIcon>
+    
+            </th>
+          </tr>
+    
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+            </td>
+          </tr>
+        </ng-template>
+    
+    
+        <ng-template pTemplate="emptymessage" let-columns>
+          <tr>
+            <td [attr.colspan]="columns.length">
+              <div class="no-data-msg">
+                No data found
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+</div>
+</mat-card>

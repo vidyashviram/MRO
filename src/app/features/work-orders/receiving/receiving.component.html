@@ -1,0 +1,21 @@
+<form [formGroup]="receivingForm" (ngSubmit)="submitForm()">
+        <div class="form-row">
+                <app-work-order-common-form [rowData]='paramName' class="form-width"></app-work-order-common-form>
+            <div class="form-group col-12 col-sm-6 col-md-6 col-lg-6"
+                *ngFor="let fields of fieldsArray" [ngSwitch]="fields.type">
+                <label for="soNum">{{fields.label}}</label>
+                <input *ngSwitchCase="'text'" type="{{fields.type}}" id="{{fields.control}}"
+                    class="form-control" placeholder="{{fields.label}}"
+                    formControlName="{{fields.control}}">
+                <p-dropdown *ngSwitchCase="'select'" appendTo="body" [filter]="true"
+                    [options]="fields.options" formControlName="{{fields.control}}"
+                    [showTransitionOptions]="'500ms'" [hideTransitionOptions]="'500ms'"
+                    [style]="{'margin-left': '1px','margin-right': '1px','width':'100%','color':'#C7C7C7','background-color':'#383B50'}">
+                </p-dropdown>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <button type="button" id="at-btn-publish" class="buttons col-lg-2 mr-1"
+                (click)="submitForm()">Save</button>
+        </div>
+    </form>

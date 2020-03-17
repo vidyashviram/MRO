@@ -1,0 +1,49 @@
+.filter{
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 20%;
+}
+
+.btn-color{
+    background-color:#E4551F;
+    color:white;
+    border-color: #E4551F;
+}
+
+.bold{
+    font-weight: bold;
+}
+.filter-icon-size{
+    font-size: 20px;
+}
+
+.view-btn{
+    color:#E4551F;
+    border-color: #E4551F;
+}
+.apply-btn{
+    width: 150px;
+    margin-top: 30px;
+    /* margin: auto; */
+}
+
+.margin-auto{
+    margin: auto;
+}
+
+.noDataFound{
+    text-align: center;
+    font-size: 16px;
+    margin: auto;
+}
+
+.search-icon{
+    position: fixed;
+    display: contents;
+}
+
+.over-flow{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

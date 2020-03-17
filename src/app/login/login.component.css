@@ -1,0 +1,44 @@
+
+.login-wrapper-height{
+    height:100vh;
+    text-align:center;
+}
+
+.login-card-align{
+    margin: auto;
+}
+
+
+.login-card-height{
+    height:350px;
+
+}
+
+.login-btn {
+    background-color: #E4551F;
+    color:white;
+    border-color: #E4551F;
+}
+.login-background{
+    background-image: url('../../assets/login/login_bg.png'); 
+    background-size: cover; 
+    height: 100%;
+}
+.login-height{
+    line-height:3;
+}
+
+.ltts-logo{
+    margin-bottom: 2%;
+}
+
+.forgot-user{
+    font-size: 12px;
+    color: #E4551F;
+}
+
+ 
+#main {
+    display: flex;
+    align-items: center;
+  }
